@@ -1,0 +1,4 @@
+cd command-It is used to open afoder or return to previous folder
+cp command-It is used to make a copy of existing files with different names
+mkdir command - this command is used to make a new directory or  a new folder
+git commit-this command is used to ensures the the changes happens to the program
