@@ -1,19 +1,22 @@
-
 const fs=require("fs");
+fs.copyFile("test.txt","dest.txt")
 
-
-if(pathname==='/admin'){
-    if(user==='admin' && pass==='1234'){
-        fs.readFile("./admin_dashboard.html",(err,data)=>{
-            if(err){
-                console.log(err);
-            }
-            else{
-                res.end()
-            }
-        })
+//fs.copyFileSync("test.txt","dest.txt");
+fs.copyFile("test.txt","new_dest.txt",(err)=>{
+    if(err){
+        console.log("error while file is copied",err);
     }
     else{
-        res.writeHead(401,content-type)
+        console.log("file is copied");
     }
-}
+})
+//fs.copyFileSync("test.txt","dest.txt");
+fs.unlinkSync("new_dest.txt");
+fs.unlink("dest.txt",(err)=>{
+    if(err){
+        console.log("error while deleting file",err,err);
+    }
+    else{
+        console.log("file is deleted");
+    }
+})
