@@ -12,4 +12,7 @@ if(pathname==='/admin'){
             }
         })
     }
+    else{
+        res.writeHead(401,content-type)
+    }
 }

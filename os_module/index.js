@@ -1,27 +1,5 @@
 const os=require("os");
 const fs=require("fs");
-/*const totalmemory=os.totalmem()/(1024*1024*1024);
-const freememory=os.freemem()/(1024*1024*1024);
-const cpu=os.cpus()[0]model
-const pllatform=os.platform()
-//console.log("total memory",totalmemory);
-console.log("free memory",freememory);
-//console.log(cpu);
-os.uptime();
-const log=`
-Time:${timestamp}
-free memory:${freememory}
-`
-setInterval(=>{
-    fs.appendFile("./system_info.txt",log,(err=>{
-        if(err){
-            console.log(err);
-
-        }
-
-    }))
-},500const fs = require("fs");
-const os = require("os");*/
 
 function logSystemInfo() {
     const totalMemory = os.totalmem() / (1024 * 1024 * 1024);

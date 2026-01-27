@@ -18,15 +18,17 @@
             console.log("Files:",files);
         }
     })
-    // fs.rmdir("newdirectory",(err)=>{
-    //         if(err){
-    //         console.log(err);return
-    //     }
-    //     console.log("directory removed");
-    // })
-    fs.rm("newdirectory",(err)=>{
-        if(err){
+    fs.rmdir("newdirectory",(err)=>{
+            if(err){
             console.log(err);return
-        }
+
+
+    }
+        console.log("directory removed");
+    })
+    fs.rm("newdirectory",(err)=>{
+            if(err){
+            console.log(err);return
+    }
         console.log("directory removed");
     })
