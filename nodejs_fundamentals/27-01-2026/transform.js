@@ -1,5 +1,6 @@
 const fs=require("fs");
 const path=require("path");
+const {transform}=reqire("stream")
 const inputFilePath=path.join(__dirname,"input.txt")
 const tranformoutputFilePath=path.join(__dirname,"transformoutput.txt")
 
