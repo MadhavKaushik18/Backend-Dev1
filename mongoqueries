@@ -1,0 +1,108 @@
+se StudentsDB
+switched to db StudentsDB
+db.students.insertMany([
+  { name: "Rahul", age: 21, course: "BCA", city: "Delhi", feesPaid: true },
+  { name: "Amit", age: 23, course: "MCA", city: "Mumbai", feesPaid: false },
+  { name: "Priya", age: 20, course: "BBA", city: "Pune", feesPaid: true },
+  { name: "Rahul", age: 24, course: "BCA", city: "Noida", feesPaid: false },
+  { name: "Sneha", age: 22, course: "BTech", city: "Lucknow", feesPaid: true }
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('69ba72fb0773092a2d7dc69c'),
+    '1': ObjectId('69ba72fb0773092a2d7dc69d'),
+    '2': ObjectId('69ba72fb0773092a2d7dc69e'),
+    '3': ObjectId('69ba72fb0773092a2d7dc69f'),
+    '4': ObjectId('69ba72fb0773092a2d7dc6a0')
+  }
+}
+db.students.find({ age: { $gt: 20 } })
+{
+  _id: ObjectId('69ba72fb0773092a2d7dc69c'),
+  name: 'Rahul',
+  age: 21,
+  course: 'BCA',
+  city: 'Delhi',
+  feesPaid: true
+}
+{
+  _id: ObjectId('69ba72fb0773092a2d7dc69d'),
+  name: 'Amit',
+  age: 23,
+  course: 'MCA',
+  city: 'Mumbai',
+  feesPaid: false
+}
+{
+  _id: ObjectId('69ba72fb0773092a2d7dc69f'),
+  name: 'Rahul',
+  age: 24,
+  course: 'BCA',
+  city: 'Noida',
+  feesPaid: false
+}
+{
+  _id: ObjectId('69ba72fb0773092a2d7dc6a0'),
+  name: 'Sneha',
+  age: 22,
+  course: 'BTech',
+  city: 'Lucknow',
+  feesPaid: true
+}
+db.students.find({course:"BCA"})
+{
+  _id: ObjectId('69ba72fb0773092a2d7dc69c'),
+  name: 'Rahul',
+  age: 21,
+  course: 'BCA',
+  city: 'Delhi',
+  feesPaid: true
+}
+{
+  _id: ObjectId('69ba72fb0773092a2d7dc69f'),
+  name: 'Rahul',
+  age: 24,
+  course: 'BCA',
+  city: 'Noida',
+  feesPaid: false
+}
+db.students.updateOne(
+  { name: "Amit" },
+  { $set: { city: "Bangalore" } }
+)
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.students.updateMany(
+  { course: "BCA" },
+  { $set: { course: "MCA" } }
+)
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+db.students.updateMany(
+  { age: { $gt: 22 } },
+  { $set: { feesPaid: true } }
+)
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+db.students.deleteMany({ feesPaid: false })
+{
+  acknowledged: true,
+  deletedCount: 0
+}
+db.students.deleteMany({ age:{$lt:22}})
